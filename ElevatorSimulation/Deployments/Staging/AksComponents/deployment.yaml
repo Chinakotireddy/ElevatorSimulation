@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Elevator-console-app
+  namespace: stbgw-connectedvideo
+  labels:
+    app: Elevator-console-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Elevator-console-app
+  template:
+    metadata:
+      labels:
+        app: Elevator-console-app
+    spec:
+      containers:
+        - name: Elevator-console-app
+          image: ACRName.azurecr.io/stbgtw/Elevator:dev_C1_26032023.1
+          imagePullPolicy: IfNotPresent
+          command: ["dotnet", "ElevatorSimulation.dll"]
+          envFrom:
+          - configMapRef: 
+              name: Elevator-cm

@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "ElevatorSimulation": {
+      "commandName": "Project",
+      "commandLineArgs": "\"Staging\""
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

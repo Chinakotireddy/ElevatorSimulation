@@ -1,0 +1,11 @@
+﻿apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: Elevator-cm
+  namespace: Elevator
+  labels:
+    app: Elevator-cm
+data:
+  Number_Of_Floors_Available: "10"
+  Number_Of_Elevators_Available: "4"

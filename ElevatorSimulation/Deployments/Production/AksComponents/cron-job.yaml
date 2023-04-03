@@ -1,0 +1,20 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: stb-cd-proximity-control-cron-job
+spec:
+  schedule: "*/10 * * * *"
+  successfulJobsHistoryLimit: 10
+  failedJobsHistoryLimit: 10
+  concurrencyPolicy : Replace
+  jobTemplate:
+    spec:
+      ttlSecondsAfterFinished: 600000
+      template:
+        spec:
+          containers:
+          - name: stb-cd-proximity-control
+            image: acrstbgtwstg.azurecr.io/stbgtw/contentdiscovery-proximity-control:D1_15032023
+            imagePullPolicy: IfNotPresent
+            command: ["dotnet", "ElevatorSimulation.dll"]
+          restartPolicy: Never

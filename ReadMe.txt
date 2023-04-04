@@ -1,9 +1,4 @@
-First, let's define the requirements of the elevator challenge:
-
-The elevator can move up and down between floors.
-The elevator can only stop at the floors requested by the users.
-The elevator has a limit of maximum weight that it can carry.
-The elevator should be able to handle multiple requests at once.
+Developer Legacy:
 
 1) 
 Single Responsibility Principle : this is to separate the responsibilities of each class
